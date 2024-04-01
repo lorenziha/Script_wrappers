@@ -173,7 +173,7 @@ do
 	fi 
 	if [ ! -f ${prefix}.dedup.bam ]; then
 		echo; echo "Running ${MD} on ${prefix}.sorted.bam"; echo
-		java -Xmx100G -Djava.io.tmpdir=$tempdir -jar $MD INPUT=${prefix}.sorted.bam OUTPUT=${prefix}.dedup.bam M=${prefix}.metrics.txt
+		java -Xmx100G -Djava.io.tmpdir=$tempdir -jar $MD INPUT=${prefix}.sorted.bam OUTPUT=${prefix}.dedup.bam M=${prefix}.metrics.txt REMOVE_DUPLICATES=true
 	fi
 	if [ ! -f ${prefix}.dedup.bai ]; then
 		echo; echo "Running ${BI} on ${prefix}.sorted.bam"; echo	
